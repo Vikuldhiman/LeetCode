@@ -1,0 +1,23 @@
+class Solution {
+    int max;
+    int arr[];
+    public int rob(int[] nums) {
+        this.max=Integer.MIN_VALUE;
+        this.arr=nums;
+        getMax(0,0);
+        getMax(1,0);
+        return max;
+    }
+    private void getMax(int idx , int sum){
+        if(idx>=this.arr.length)
+        {
+            if(sum>max)
+            {
+                max=sum;
+            }
+            return;
+        }
+        getMax(idx+2,sum+this.arr[idx]);
+        getMax(idx+3,sum+this.arr[idx]);
+    }
+}
