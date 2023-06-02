@@ -1,0 +1,31 @@
+
+class Solution {
+    int storage[];
+    public int fib(int n) {        
+       storage =new int[n+1];
+       Arrays.fill(storage,-1);
+       return helper(n); 
+       }
+private int helper(int n){
+    if(n<=1){
+        return n;
+    }
+    if(storage[n]!=-1){
+        return storage[n];
+    }
+    int val=helper(n-1)+helper(n-2);
+    storage[n]=val;
+    return val;
+}
+}
+
+// if(n==0)
+// return 0;
+// if(n==1)
+// return 1;
+// return fib(n-1)+fib(n-2);
+
+//  if(n<2){
+//         return n;
+//         }
+//         return fib(n-1)+fib(n-2);
