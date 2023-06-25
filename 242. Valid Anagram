@@ -6,8 +6,13 @@ class Solution {
         Arrays.sort(temp1);
         Arrays.sort(temp2);
         for(int i=0;i<temp1.length;i++){
+            if(temp1.length!=temp2.length){
+                break;
+                }
+            else{
                 if(temp1[i]==temp2[i]){
                     count++;
+                }
             }
         }
         if((count==temp1.length)&&(count==temp2.length))
