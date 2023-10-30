@@ -1,0 +1,19 @@
+class Solution {
+    public String interpret(String command) {
+        int len = command.length();
+        String str="";
+        for(int i=0;i<len;i++)
+        {
+            if(command.charAt(i) == 'G'){
+                str += "G";
+            }
+            else if(command.charAt(i) == '(' && command.charAt(i+1) == ')' ){
+                str += "o";
+                }
+            else if(command.charAt(i) == '(' && command.charAt(i+1) == 'a'){
+                    str += "al";
+            }
+        }
+        return str;
+    }
+}
